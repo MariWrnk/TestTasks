@@ -1,7 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import static java.lang.Math.min;
 
 public class diffTask {
@@ -21,6 +20,7 @@ public class diffTask {
         fillHTML();
     }
 
+    //read the data of the source files
     public static void readFiles() throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите путь до первого файла:");
@@ -38,6 +38,7 @@ public class diffTask {
         br.close();
     }
 
+    //find the longest common subsequence
     public static void findLCS(){
         for(int i = 0; i < lcsArr.length; i++){
             for(int j = 0; j < lcsArr[i].length; j++){
@@ -76,6 +77,7 @@ public class diffTask {
         }
     }
 
+    //find strings that were changed
     public static void findChanged(){
         int sv1 = saved1ind.get(0);
         int sv2 = saved2ind.get(0);
@@ -111,6 +113,7 @@ public class diffTask {
         }
     }
 
+    //fill diff.html
     public static void fillHTML() throws IOException {
         File f = new File("./resources/diff.html");
         f.createNewFile();
