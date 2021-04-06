@@ -115,7 +115,9 @@ public class diffTask {
 
     //fill diff.html
     public static void fillHTML() throws IOException {
-        File f = new File("./resources/diff.html");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите путь для сохранения результата:");
+        File f = new File(sc.nextLine() + "/diff.html");
         f.createNewFile();
         PrintWriter pw = new PrintWriter(f);
         pw.println("<!DOCTYPE HTML>");
